@@ -39,3 +39,10 @@ set_target_properties(tsan_example-01
              LINK_FLAGS "-fopenmp"
              LINK_LIBRARIES "-ltsan"
   )
+
+add_executable(ubsan_example-01 ubsan_example-01.f90)
+set_target_properties(ubsan_example-01
+  PROPERTIES POSITION_INDEPENDENT_CODE 1
+             COMPILE_OPTIONS "-fsanitize=undefined"
+             LINK_LIBRARIES "-lubsan"
+  )
